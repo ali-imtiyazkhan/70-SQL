@@ -228,10 +228,18 @@ Scalar functions operate on a single value and return a single value.
 
 #### `ORDER BY`
 * **Purpose:** Sorts the result set in ascending (`ASC`, default) or descending (`DESC`) order. You can sort by multiple columns.
-* **Used in:** `19.sql`, `23.sql`, `25.sql`, `27.sql`, `29.sql`, `30.sql`
+* **Used in:** `19.sql`, `23.sql`, `25.sql`, `27.sql`, `29.sql`, `30.sql`, `40.sql`
 * **Syntax:**
   ```sql
   SELECT city FROM patients ORDER BY total_patients DESC, city ASC;
+  ```
+
+#### `LIMIT`
+* **Purpose:** Specifies the maximum number of rows that the query should return.
+* **Used in:** `40.sql`
+* **Syntax:**
+  ```sql
+  SELECT * FROM admissions LIMIT 1;
   ```
 
 ---
