@@ -1,10 +1,10 @@
 /*
-  Description: Show the patient's first_name, last_name, and their admission diagnosis using an INNER JOIN.
-  This will only show patients who have actually been admitted (have a matching record in the admissions table).
+  Description: Show the patient's first_name and last_name.
+  Then, use the admissions table to find out how many patients were admitted for each diagnosis. Show the result in two columns: diagnosis and patient_count.
 */
 SELECT 
-    patients.first_name, 
-    patients.last_name, 
-    admissions.diagnosis
+    admissions.diagnosis,
+    COUNT(patients.patient_id) AS patient_count
 FROM patients
-INNER JOIN admissions ON patients.patient_id = admissions.patient_id;
+JOIN admissions ON patients.patient_id = admissions.patient_id
+GROUP BY admissions.diagnosis;
