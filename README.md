@@ -85,6 +85,16 @@ Scalar functions operate on a single value and return a single value.
   ```
   *(Note: In SQLite, you might use `strftime('%Y', date_column)` instead).*
 
+#### `DAY()`
+* **Purpose:** Extracts the day of the month (1-31) from a date value.
+* **Used in:** `39.sql`
+* **Syntax:**
+  ```sql
+  -- Show days only
+  SELECT DAY(admission_date) FROM admissions;
+  ```
+  *(Note: In SQLite, you might use `CAST(strftime('%d', date_column) AS INTEGER)` instead).*
+
 #### `CONCAT()`
 * **Purpose:** Concatenates two or more strings together.
 * **Used in:** `6.sql`, `36.sql`
