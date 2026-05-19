@@ -30,7 +30,7 @@ Aggregate functions perform a calculation on a set of values and return a single
 #### `COUNT()`
 * **Purpose:** Counts the number of rows that match a specific criteria.
 * **Example:** `COUNT(*)` counts all rows in a table or group.
-* **Used in:** `13.sql`, `15.sql`, `20.sql`, `26.sql`, `27.sql`, `29.sql`, `30.sql`, `42.sql`
+* **Used in:** `13.sql`, `15.sql`, `20.sql`, `26.sql`, `27.sql`, `29.sql`, `30.sql`, `42.sql`, `44.sql`
 * **Syntax:**
   ```sql
   SELECT COUNT(*) AS total_admissions FROM admissions;
@@ -177,7 +177,7 @@ Scalar functions operate on a single value and return a single value.
 
 #### `JOIN` / `INNER JOIN`
 * **Purpose:** Combines rows from two or more tables based on a related column. It only returns rows where there is a match in both tables.
-* **Used in:** `22.sql`, `31.sql`, `42.sql`, `43.sql`
+* **Used in:** `22.sql`, `31.sql`, `42.sql`, `43.sql`, `44.sql`
 * **Syntax:**
   ```sql
   SELECT patients.first_name, admissions.diagnosis
@@ -217,7 +217,7 @@ Scalar functions operate on a single value and return a single value.
 
 #### `GROUP BY`
 * **Purpose:** Groups rows that have the same values in specified columns into summary rows (like "total patients by city").
-* **Used in:** `20.sql`, `26.sql`, `27.sql`, `29.sql`, `30.sql`, `37.sql`, `42.sql`, `43.sql`
+* **Used in:** `20.sql`, `26.sql`, `27.sql`, `29.sql`, `30.sql`, `37.sql`, `42.sql`, `43.sql`, `44.sql`
 * **Syntax:**
   ```sql
   SELECT city, COUNT(*) FROM patients GROUP BY city;
@@ -237,7 +237,7 @@ Scalar functions operate on a single value and return a single value.
 
 #### `ORDER BY`
 * **Purpose:** Sorts the result set in ascending (`ASC`, default) or descending (`DESC`) order. You can sort by multiple columns.
-* **Used in:** `19.sql`, `23.sql`, `25.sql`, `27.sql`, `29.sql`, `30.sql`, `40.sql`
+* **Used in:** `19.sql`, `23.sql`, `25.sql`, `27.sql`, `29.sql`, `30.sql`, `40.sql`, `44.sql`
 * **Syntax:**
   ```sql
   SELECT city FROM patients ORDER BY total_patients DESC, city ASC;
