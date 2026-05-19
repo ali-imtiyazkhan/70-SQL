@@ -69,6 +69,30 @@ Scalar functions operate on a single value and return a single value.
   ```
   *(Note: In SQLite, you might use `strftime('%Y', date_column)` instead).*
 
+#### `CONCAT()`
+* **Purpose:** Concatenates two or more strings together.
+* **Used in:** `6.sql`, `36.sql`
+* **Syntax:**
+  ```sql
+  SELECT CONCAT(first_name, ' ', last_name) AS full_name FROM patients;
+  ```
+
+#### `UPPER()`
+* **Purpose:** Converts a string to uppercase.
+* **Used in:** `36.sql`
+* **Syntax:**
+  ```sql
+  SELECT UPPER(last_name) FROM patients;
+  ```
+
+#### `LOWER()`
+* **Purpose:** Converts a string to lowercase.
+* **Used in:** `36.sql`
+* **Syntax:**
+  ```sql
+  SELECT LOWER(first_name) FROM patients;
+  ```
+
 ---
 
 ### 3. Logical and Conditional Expressions
