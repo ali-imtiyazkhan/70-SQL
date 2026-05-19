@@ -135,3 +135,20 @@ Scalar functions operate on a single value and return a single value based on th
   ```sql
   SELECT city FROM patients ORDER BY total_patients DESC, city ASC;
   ```
+
+---
+
+## 5. Set Operators
+
+### `UNION` / `UNION ALL`
+* **Purpose:** Combines the result sets of two or more `SELECT` statements into a single result set.
+  * `UNION` removes duplicate rows between the combined queries.
+  * `UNION ALL` keeps all rows, including duplicates (which is faster).
+* **Used in:** `28.sql`
+* **Syntax:**
+  ```sql
+  SELECT first_name, last_name, 'Patient' AS role FROM patients
+  UNION ALL
+  SELECT first_name, last_name, 'Doctor' AS role FROM doctors;
+  ```
+
