@@ -68,7 +68,7 @@ Scalar functions operate on a single value and return a single value.
 
 #### `LENGTH()`
 * **Purpose:** Returns the number of characters in a string.
-* **Used in:** `21.sql`, `23.sql`
+* **Used in:** `21.sql`, `23.sql`, `41.sql`
 * **Syntax:**
   ```sql
   -- Order names by how long they are
@@ -151,7 +151,7 @@ Scalar functions operate on a single value and return a single value.
 * **Purpose:** Searches for a specified pattern in a column.
   * `%` represents zero, one, or multiple characters.
   * `_` represents a single character.
-* **Used in:** `21.sql`
+* **Used in:** `21.sql`, `41.sql`
 * **Syntax:**
   ```sql
   -- Finds names starting with 's' and ending with 's'
@@ -160,10 +160,19 @@ Scalar functions operate on a single value and return a single value.
 
 #### `IN`
 * **Purpose:** Allows you to specify multiple values in a `WHERE` clause (shorthand for multiple `OR` conditions).
-* **Used in:** `25.sql`
+* **Used in:** `25.sql`, `41.sql`
 * **Syntax:**
   ```sql
   SELECT first_name FROM patients WHERE allergies IN ('Penicillin', 'Morphine');
+  ```
+
+#### `%` (Modulo Operator)
+* **Purpose:** Returns the remainder of a division. Used to find odd or even numbers.
+* **Used in:** `41.sql`
+* **Syntax:**
+  ```sql
+  -- Find patients with odd IDs
+  SELECT patient_id FROM patients WHERE patient_id % 2 != 0;
   ```
 
 #### `JOIN` / `INNER JOIN`
