@@ -136,6 +136,26 @@ Scalar functions operate on a single value and return a single value.
   LEFT JOIN admissions ON patients.patient_id = admissions.patient_id;
   ```
 
+#### `RIGHT JOIN` / `RIGHT OUTER JOIN`
+* **Purpose:** Returns all rows from the right table, and the matched rows from the left table. If there is no match, the result is NULL on the left side.
+* **Used in:** `33.sql`
+* **Syntax:**
+  ```sql
+  SELECT patients.first_name, admissions.diagnosis
+  FROM patients
+  RIGHT JOIN admissions ON patients.patient_id = admissions.patient_id;
+  ```
+
+#### `FULL JOIN` / `FULL OUTER JOIN`
+* **Purpose:** Returns all rows when there is a match in either the left or the right table. If there is no match, the non-matching side will contain NULLs.
+* **Used in:** `34.sql`
+* **Syntax:**
+  ```sql
+  SELECT patients.first_name, admissions.diagnosis
+  FROM patients
+  FULL OUTER JOIN admissions ON patients.patient_id = admissions.patient_id;
+  ```
+
 #### `GROUP BY`
 * **Purpose:** Groups rows that have the same values in specified columns into summary rows (like "total patients by city").
 * **Used in:** `20.sql`, `26.sql`, `27.sql`, `29.sql`, `30.sql`
