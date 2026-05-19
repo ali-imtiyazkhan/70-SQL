@@ -116,14 +116,24 @@ Scalar functions operate on a single value and return a single value.
   SELECT first_name FROM patients WHERE allergies IN ('Penicillin', 'Morphine');
   ```
 
-#### `JOIN` (Inner Join)
-* **Purpose:** Combines rows from two or more tables based on a related column between them.
-* **Used in:** `22.sql`
+#### `JOIN` / `INNER JOIN`
+* **Purpose:** Combines rows from two or more tables based on a related column. It only returns rows where there is a match in both tables.
+* **Used in:** `22.sql`, `31.sql`
 * **Syntax:**
   ```sql
   SELECT patients.first_name, admissions.diagnosis
   FROM patients
-  JOIN admissions ON patients.patient_id = admissions.patient_id;
+  INNER JOIN admissions ON patients.patient_id = admissions.patient_id;
+  ```
+
+#### `LEFT JOIN` / `LEFT OUTER JOIN`
+* **Purpose:** Returns all rows from the left table, and the matched rows from the right table. If there is no match, the result is NULL on the right side.
+* **Used in:** `32.sql`
+* **Syntax:**
+  ```sql
+  SELECT patients.first_name, admissions.diagnosis
+  FROM patients
+  LEFT JOIN admissions ON patients.patient_id = admissions.patient_id;
   ```
 
 #### `GROUP BY`
