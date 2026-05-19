@@ -47,7 +47,7 @@ Aggregate functions perform a calculation on a set of values and return a single
 
 #### `MAX()`
 * **Purpose:** Returns the maximum (largest) value in a set.
-* **Used in:** `38.sql`
+* **Used in:** `38.sql`, `43.sql`
 * **Syntax:**
   ```sql
   SELECT MAX(weight) FROM patients;
@@ -55,7 +55,7 @@ Aggregate functions perform a calculation on a set of values and return a single
 
 #### `MIN()`
 * **Purpose:** Returns the minimum (smallest) value in a set.
-* **Used in:** `38.sql`
+* **Used in:** `38.sql`, `43.sql`
 * **Syntax:**
   ```sql
   SELECT MIN(weight) FROM patients;
@@ -97,7 +97,7 @@ Scalar functions operate on a single value and return a single value.
 
 #### `CONCAT()`
 * **Purpose:** Concatenates two or more strings together.
-* **Used in:** `6.sql`, `36.sql`
+* **Used in:** `6.sql`, `36.sql`, `43.sql`
 * **Syntax:**
   ```sql
   SELECT CONCAT(first_name, ' ', last_name) AS full_name FROM patients;
@@ -177,7 +177,7 @@ Scalar functions operate on a single value and return a single value.
 
 #### `JOIN` / `INNER JOIN`
 * **Purpose:** Combines rows from two or more tables based on a related column. It only returns rows where there is a match in both tables.
-* **Used in:** `22.sql`, `31.sql`, `42.sql`
+* **Used in:** `22.sql`, `31.sql`, `42.sql`, `43.sql`
 * **Syntax:**
   ```sql
   SELECT patients.first_name, admissions.diagnosis
@@ -217,7 +217,7 @@ Scalar functions operate on a single value and return a single value.
 
 #### `GROUP BY`
 * **Purpose:** Groups rows that have the same values in specified columns into summary rows (like "total patients by city").
-* **Used in:** `20.sql`, `26.sql`, `27.sql`, `29.sql`, `30.sql`, `37.sql`, `42.sql`
+* **Used in:** `20.sql`, `26.sql`, `27.sql`, `29.sql`, `30.sql`, `37.sql`, `42.sql`, `43.sql`
 * **Syntax:**
   ```sql
   SELECT city, COUNT(*) FROM patients GROUP BY city;
