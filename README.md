@@ -38,11 +38,27 @@ Aggregate functions perform a calculation on a set of values and return a single
 
 #### `SUM()`
 * **Purpose:** Calculates the total sum of a numeric column or expression.
-* **Used in:** `24.sql`
+* **Used in:** `24.sql`, `37.sql`
 * **Syntax:**
   ```sql
   -- Summing values conditionally
   SELECT SUM(CASE WHEN gender = 'M' THEN 1 ELSE 0 END) AS male_count FROM patients;
+  ```
+
+#### `MAX()`
+* **Purpose:** Returns the maximum (largest) value in a set.
+* **Used in:** `38.sql`
+* **Syntax:**
+  ```sql
+  SELECT MAX(weight) FROM patients;
+  ```
+
+#### `MIN()`
+* **Purpose:** Returns the minimum (smallest) value in a set.
+* **Used in:** `38.sql`
+* **Syntax:**
+  ```sql
+  SELECT MIN(weight) FROM patients;
   ```
 
 ---
@@ -182,7 +198,7 @@ Scalar functions operate on a single value and return a single value.
 
 #### `GROUP BY`
 * **Purpose:** Groups rows that have the same values in specified columns into summary rows (like "total patients by city").
-* **Used in:** `20.sql`, `26.sql`, `27.sql`, `29.sql`, `30.sql`
+* **Used in:** `20.sql`, `26.sql`, `27.sql`, `29.sql`, `30.sql`, `37.sql`
 * **Syntax:**
   ```sql
   SELECT city, COUNT(*) FROM patients GROUP BY city;
@@ -190,7 +206,7 @@ Scalar functions operate on a single value and return a single value.
 
 #### `HAVING`
 * **Purpose:** Filters groups created by the `GROUP BY` clause (used instead of `WHERE` when filtering aggregates).
-* **Used in:** `20.sql`, `26.sql`, `30.sql`
+* **Used in:** `20.sql`, `26.sql`, `30.sql`, `37.sql`
 * **Syntax:**
   ```sql
   -- Only show groups where the count is greater than 1
